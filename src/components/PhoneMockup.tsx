@@ -1,4 +1,4 @@
-import { motion } from "framer-motion"
+import { motion, useReducedMotion } from "framer-motion"
 import type { ReactNode } from "react"
 
 export function PhoneMockup({
@@ -26,6 +26,8 @@ export function PhoneMockup({
 }
 
 export function TrackingScreen() {
+  const prefersReducedMotion = useReducedMotion()
+
   return (
     <div className="flex h-full flex-col bg-paper-50 text-bamboo-950">
       <div className="flex items-center justify-between px-4 pb-1 pt-3 text-[10px] font-medium">
@@ -38,15 +40,31 @@ export function TrackingScreen() {
 
       <div className="relative mx-3 mt-2 h-44 overflow-hidden rounded-2xl bg-bamboo-100">
         <svg viewBox="0 0 260 180" className="h-full w-full opacity-70">
-          <path
+          <motion.path
             d="M10 150 C 60 120, 80 90, 130 80 S 200 40, 250 20"
             fill="none"
             stroke="var(--color-bamboo-500)"
             strokeWidth="4"
             strokeDasharray="2 10"
             strokeLinecap="round"
+            animate={prefersReducedMotion ? undefined : { strokeDashoffset: [0, -24] }}
+            transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
           />
         </svg>
+        <motion.div
+          className="absolute flex h-5 w-5 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-bamboo-700 text-[10px] shadow-md"
+          animate={
+            prefersReducedMotion
+              ? undefined
+              : {
+                  left: ["4%", "27%", "50%", "73%", "96%"],
+                  top: ["83%", "66%", "50%", "33%", "11%"],
+                }
+          }
+          transition={{ duration: 3.2, repeat: Infinity, ease: [0.45, 0, 0.55, 1] }}
+        >
+          🛵
+        </motion.div>
         <div className="absolute left-3 top-3 rounded-full bg-paper-50 px-2 py-1 text-[9px] font-semibold text-bamboo-700 shadow">
           Collecte en cours
         </div>

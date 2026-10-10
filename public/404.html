@@ -4,16 +4,14 @@
     <meta charset="UTF-8" />
     <title>BanToo</title>
     <script>
-      // GitHub Pages serves this file for any unmatched route under the
-      // project site (https://EdOneApp.github.io/BanToo/). It packs the
+      // GitHub Pages serves this file for any unmatched route. It packs the
       // real path the user wanted into a "redirect" query param and sends
       // the browser to index.html, which reads it back (see index.html)
       // and hands the real path to React Router.
       ;(function () {
-        var base = '/BanToo'
         var loc = window.location
-        var path = loc.pathname.slice(base.length) + loc.search + loc.hash
-        window.location.replace(base + '/?redirect=' + encodeURIComponent(path))
+        var path = loc.pathname + loc.search + loc.hash
+        window.location.replace('/?redirect=' + encodeURIComponent(path))
       })()
     </script>
   </head>

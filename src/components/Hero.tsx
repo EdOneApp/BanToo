@@ -1,13 +1,36 @@
-import { motion } from "framer-motion"
+import { type MouseEvent } from "react"
+import { motion, useMotionValue, useReducedMotion, useSpring, useTransform } from "framer-motion"
 import { LiquidBlob } from "./LiquidBlob"
+import { SoapBubbles } from "./SoapBubbles"
+import { MagneticButton } from "./MagneticButton"
 import { PhoneMockup, TrackingScreen } from "./PhoneMockup"
 import { PAYMENT_METHODS } from "../lib/content"
 
 export function Hero() {
+  const prefersReducedMotion = useReducedMotion()
+  const mx = useMotionValue(0)
+  const my = useMotionValue(0)
+  const sx = useSpring(mx, { stiffness: 60, damping: 20, mass: 0.6 })
+  const sy = useSpring(my, { stiffness: 60, damping: 20, mass: 0.6 })
+  const sx2 = useTransform(sx, (v) => v * -0.7)
+  const sy2 = useTransform(sy, (v) => v * -0.7)
+
+  function handleMouseMove(e: MouseEvent<HTMLElement>) {
+    if (prefersReducedMotion) return
+    const { innerWidth, innerHeight } = window
+    mx.set((e.clientX / innerWidth - 0.5) * 50)
+    my.set((e.clientY / innerHeight - 0.5) * 50)
+  }
+
   return (
-    <section className="relative overflow-hidden pt-32 pb-16 md:pt-40">
-      <LiquidBlob tone="bamboo" className="-left-32 -top-20 h-[420px] w-[420px]" />
-      <LiquidBlob tone="gold" reverse className="-right-24 top-40 h-[320px] w-[320px]" />
+    <section onMouseMove={handleMouseMove} className="relative overflow-hidden pt-32 pb-16 md:pt-40">
+      <motion.div style={prefersReducedMotion ? undefined : { x: sx, y: sy }}>
+        <LiquidBlob tone="bamboo" className="-left-32 -top-20 h-[420px] w-[420px]" />
+      </motion.div>
+      <motion.div style={prefersReducedMotion ? undefined : { x: sx2, y: sy2 }}>
+        <LiquidBlob tone="gold" reverse className="-right-24 top-40 h-[320px] w-[320px]" />
+      </motion.div>
+      <SoapBubbles count={8} className="opacity-70" />
 
       <div className="relative mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 px-4 md:grid-cols-2">
         <motion.div
@@ -32,26 +55,26 @@ export function Hero() {
           </p>
 
           <div className="mt-7 flex flex-wrap items-center gap-3">
-            <a
+            <MagneticButton
               href="#telecharger"
-              className="group inline-flex items-center gap-2 rounded-full bg-bamboo-950 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-bamboo-950/20 transition-transform hover:scale-105 active:scale-95"
+              className="group inline-flex items-center gap-2 rounded-full bg-bamboo-950 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-bamboo-950/20"
             >
               <AppleGlyph />
               <span>
                 Bientôt sur <br className="hidden sm:block" />
                 <span className="font-display text-base">l'App Store</span>
               </span>
-            </a>
-            <a
+            </MagneticButton>
+            <MagneticButton
               href="#telecharger"
-              className="group inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-bamboo-950 shadow-lg shadow-bamboo-950/10 ring-1 ring-bamboo-950/10 transition-transform hover:scale-105 active:scale-95"
+              className="group inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-bamboo-950 shadow-lg shadow-bamboo-950/10 ring-1 ring-bamboo-950/10"
             >
               <PlayGlyph />
               <span>
                 Disponible sur <br className="hidden sm:block" />
                 <span className="font-display text-base">Google Play</span>
               </span>
-            </a>
+            </MagneticButton>
           </div>
 
           <div className="mt-7 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-bamboo-900/50">

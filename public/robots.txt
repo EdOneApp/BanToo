@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://EdOneApp.github.io/BanToo/sitemap.xml
+Sitemap: https://bantoo.myoctogone.com/sitemap.xml

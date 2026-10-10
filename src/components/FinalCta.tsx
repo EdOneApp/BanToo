@@ -1,5 +1,7 @@
 import { motion } from "framer-motion"
 import { LiquidBlob } from "./LiquidBlob"
+import { SoapBubbles } from "./SoapBubbles"
+import { MagneticButton } from "./MagneticButton"
 import { BRAND } from "../lib/content"
 
 export function FinalCta() {
@@ -8,6 +10,7 @@ export function FinalCta() {
       <div className="relative mx-auto max-w-4xl overflow-hidden rounded-[2.5rem] bg-bamboo-950 px-6 py-16 text-center text-paper-100 sm:px-12">
         <LiquidBlob tone="bamboo" className="-left-20 -top-20 h-72 w-72 opacity-40" />
         <LiquidBlob tone="gold" reverse className="-right-16 bottom-0 h-64 w-64 opacity-30" />
+        <SoapBubbles count={9} tone="light" />
 
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -38,18 +41,18 @@ export function FinalCta() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="relative mt-8 flex flex-wrap items-center justify-center gap-3"
         >
-          <a
+          <MagneticButton
             href="#"
-            className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-bamboo-950 shadow-lg transition-transform hover:scale-105 active:scale-95"
+            className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-bamboo-950 shadow-lg"
           >
             Bientôt sur l'App Store
-          </a>
-          <a
+          </MagneticButton>
+          <MagneticButton
             href="#"
-            className="rounded-full bg-bamboo-600 px-6 py-3 text-sm font-semibold text-white shadow-lg transition-transform hover:scale-105 active:scale-95"
+            className="rounded-full bg-bamboo-600 px-6 py-3 text-sm font-semibold text-white shadow-lg"
           >
             Disponible sur Google Play
-          </a>
+          </MagneticButton>
         </motion.div>
 
         <p className="relative mt-6 text-xs text-paper-100/50">

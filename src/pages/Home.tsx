@@ -1,6 +1,7 @@
 import { Navbar } from "../components/Navbar"
 import { Hero } from "../components/Hero"
 import { MarqueeStrip } from "../components/MarqueeStrip"
+import { Showcase } from "../components/Showcase"
 import { Steps } from "../components/Steps"
 import { WhyBanToo } from "../components/WhyBanToo"
 import { ThreeApps } from "../components/ThreeApps"
@@ -17,6 +18,7 @@ export default function Home() {
         <Hero />
         <MarqueeStrip items={ZONES} tone="dark" />
         <MarqueeStrip items={SERVICES} tone="light" reverse />
+        <Showcase />
         <WhyBanToo />
         <Steps />
         <ThreeApps />
