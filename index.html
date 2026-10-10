@@ -16,20 +16,20 @@
     />
     <meta name="keywords" content="pressing Abidjan, blanchisserie à domicile, BanToo, nettoyage linge, livraison pressing Côte d'Ivoire" />
     <meta name="author" content="BanToo" />
-    <link rel="canonical" href="https://bantoo.app/" />
+    <link rel="canonical" href="https://EdOneApp.github.io/BanToo/" />
 
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="BanToo" />
     <meta property="og:title" content="BanToo — Votre linge, propre et livré en 24h" />
     <meta property="og:description" content="Pressing et blanchisserie à domicile. Déposez, on lave, on vous livre. Abidjan, 24h chrono." />
-    <meta property="og:image" content="/og-image.jpg" />
-    <meta property="og:url" content="https://bantoo.app/" />
+    <meta property="og:image" content="https://EdOneApp.github.io/BanToo/og-image.jpg" />
+    <meta property="og:url" content="https://EdOneApp.github.io/BanToo/" />
     <meta property="og:locale" content="fr_CI" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="BanToo — Votre linge, propre et livré en 24h" />
     <meta name="twitter:description" content="Pressing et blanchisserie à domicile à Abidjan. Déposez, on lave, on vous livre." />
-    <meta name="twitter:image" content="/og-image.jpg" />
+    <meta name="twitter:image" content="https://EdOneApp.github.io/BanToo/og-image.jpg" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -37,6 +37,18 @@
       href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap"
       rel="stylesheet"
     />
+    <script>
+      // Decodes the redirect produced by public/404.html on GitHub Pages so
+      // React Router sees the real path the user asked for, before React
+      // ever mounts. No-op on hosts that don't need the 404.html trick.
+      ;(function () {
+        var params = new URLSearchParams(window.location.search)
+        var redirect = params.get('redirect')
+        if (redirect) {
+          window.history.replaceState(null, '', '%BASE_URL%'.replace(/\/$/, '') + redirect)
+        }
+      })()
+    </script>
   </head>
   <body>
     <div id="root"></div>

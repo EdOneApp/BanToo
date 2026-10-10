@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://bantoo.app/</loc>
+    <loc>https://EdOneApp.github.io/BanToo/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://bantoo.app/mentions-legales</loc>
+    <loc>https://EdOneApp.github.io/BanToo/mentions-legales</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://bantoo.app/confidentialite</loc>
+    <loc>https://EdOneApp.github.io/BanToo/confidentialite</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://bantoo.app/cgu</loc>
+    <loc>https://EdOneApp.github.io/BanToo/cgu</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
