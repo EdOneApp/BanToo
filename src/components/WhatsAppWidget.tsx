@@ -20,8 +20,8 @@ export function WhatsAppWidget() {
             className="w-72 overflow-hidden rounded-2xl bg-white shadow-2xl shadow-bamboo-950/20 ring-1 ring-bamboo-950/5"
           >
             <div className="flex items-center gap-2 bg-[#25D366] px-4 py-3 text-white">
-              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white/20 text-sm font-bold">
-                Bt
+              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white/20 font-display text-sm font-semibold">
+                B
               </span>
               <div>
                 <p className="text-sm font-semibold">Support BanToo</p>

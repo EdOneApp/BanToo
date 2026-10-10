@@ -1,9 +1,9 @@
 import { Navbar } from "../components/Navbar"
 import { Hero } from "../components/Hero"
 import { MarqueeStrip } from "../components/MarqueeStrip"
-import { Showcase } from "../components/Showcase"
-import { Steps } from "../components/Steps"
 import { WhyBanToo } from "../components/WhyBanToo"
+import { WashCycleSection } from "../components/WashCycleSection"
+import { AppShowcase } from "../components/AppShowcase"
 import { ThreeApps } from "../components/ThreeApps"
 import { Faq } from "../components/Faq"
 import { FinalCta } from "../components/FinalCta"
@@ -18,9 +18,11 @@ export default function Home() {
         <Hero />
         <MarqueeStrip items={ZONES} tone="dark" />
         <MarqueeStrip items={SERVICES} tone="light" reverse />
-        <Showcase />
         <WhyBanToo />
-        <Steps />
+        <div id="cycle">
+          <WashCycleSection />
+        </div>
+        <AppShowcase />
         <ThreeApps />
         <Faq />
         <FinalCta />

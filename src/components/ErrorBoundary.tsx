@@ -1,5 +1,6 @@
 import { Component, type ErrorInfo, type ReactNode } from "react"
 import { ErrorShell } from "./ErrorShell"
+import { IconGear } from "./icons"
 import { BRAND } from "../lib/content"
 
 type Props = { children: ReactNode }
@@ -21,7 +22,7 @@ export class ErrorBoundary extends Component<Props, State> {
       return (
         <ErrorShell
           code="500"
-          emoji="⚙️"
+          icon={IconGear}
           title="Petit accroc dans la machine."
           body="Une erreur inattendue s'est produite. Notre équipe technique a été prévenue. Rechargez la page ou revenez à l'accueil."
         >

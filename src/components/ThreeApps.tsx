@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { APPS, BRAND } from "../lib/content"
+import { IconCheck } from "./icons"
 
 export function ThreeApps() {
   const [active, setActive] = useState(0)
@@ -12,7 +13,7 @@ export function ThreeApps() {
         initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="text-xs font-semibold uppercase tracking-widest text-bamboo-600"
+        className="font-mono-tnum text-xs tracking-widest text-bronze-500"
       >
         Une plateforme, trois apps
       </motion.p>
@@ -21,11 +22,11 @@ export function ThreeApps() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay: 0.1 }}
-        className="mt-2 max-w-xl text-balance font-display text-3xl font-bold text-bamboo-950 sm:text-4xl"
+        className="mt-3 max-w-xl text-balance font-display text-4xl font-semibold text-ink sm:text-5xl"
       >
         Réservez, livrez ou lavez avec BanToo.
       </motion.h2>
-      <p className="mt-3 max-w-lg text-sm text-bamboo-900/60 sm:text-base">
+      <p className="mt-4 max-w-lg text-sm text-ink-muted sm:text-base">
         BanToo relie ceux qui ont du linge sale, ceux qui le lavent et ceux qui le livrent. Choisissez votre
         place.
       </p>
@@ -35,16 +36,16 @@ export function ThreeApps() {
           <button
             key={a.key}
             onClick={() => setActive(i)}
-            className={`rounded-full px-4 py-2 text-sm font-semibold transition-colors ${
-              active === i ? "bg-bamboo-950 text-white" : "bg-white text-bamboo-900/60 ring-1 ring-bamboo-950/10 hover:text-bamboo-900"
+            className={`rounded-full px-5 py-2.5 text-sm font-semibold transition-colors ${
+              active === i ? "bg-bamboo-950 text-stone-50" : "bg-white text-ink-muted ring-1 ring-ink/10 hover:text-ink"
             }`}
           >
-            {a.n} — {a.label}
+            {a.label}
           </button>
         ))}
       </div>
 
-      <div className="relative mt-6 min-h-[280px] overflow-hidden rounded-3xl bg-bamboo-950 p-8 text-paper-100 sm:p-12">
+      <div className="relative mt-6 min-h-[300px] overflow-hidden rounded-[28px] bg-bamboo-950 p-8 text-stone-50 sm:p-12">
         <AnimatePresence mode="wait">
           <motion.div
             key={app.key}
@@ -55,26 +56,26 @@ export function ThreeApps() {
             className="grid grid-cols-1 gap-8 md:grid-cols-[1fr_auto] md:items-center"
           >
             <div>
-              <p className="font-display text-2xl font-bold">{app.name}</p>
-              <p className="mt-2 max-w-md text-paper-100/70">{app.tagline}</p>
-              <ul className="mt-5 space-y-2 text-sm">
+              <p className="font-display text-2xl font-semibold">{app.name}</p>
+              <p className="mt-2 max-w-md text-stone-50/65">{app.tagline}</p>
+              <ul className="mt-5 space-y-2.5 text-sm">
                 {app.bullets.map((b) => (
-                  <li key={b} className="flex items-center gap-2 text-paper-100/80">
-                    <span className="text-bamboo-400">✦</span>
+                  <li key={b} className="flex items-center gap-2.5 text-stone-50/80">
+                    <IconCheck className="h-3.5 w-3.5 shrink-0 text-bronze-400" strokeWidth={2} />
                     {b}
                   </li>
                 ))}
               </ul>
             </div>
             <div className="flex gap-3">
-              <span className="rounded-xl bg-white/10 px-4 py-2.5 text-xs font-semibold">Bientôt sur l'App Store</span>
-              <span className="rounded-xl bg-white/10 px-4 py-2.5 text-xs font-semibold">Disponible sur Google Play</span>
+              <span className="rounded-full bg-white/10 px-4 py-2.5 text-xs font-semibold">Bientôt sur l'App Store</span>
+              <span className="rounded-full bg-white/10 px-4 py-2.5 text-xs font-semibold">Disponible sur Google Play</span>
             </div>
           </motion.div>
         </AnimatePresence>
       </div>
 
-      <p className="mt-6 text-center text-xs text-bamboo-900/40">
+      <p className="mt-6 text-center text-xs text-ink-muted/70">
         Vous tenez un pressing ? Écrivez-nous à{" "}
         <a href={`mailto:${BRAND.partnerEmail}`} className="font-semibold text-bamboo-700 underline underline-offset-2">
           {BRAND.partnerEmail}

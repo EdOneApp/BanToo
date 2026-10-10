@@ -6,17 +6,17 @@ function FaqItem({ q, a, defaultOpen = false }: { q: string; a: string; defaultO
   const [open, setOpen] = useState(defaultOpen)
 
   return (
-    <div className="border-b border-bamboo-950/10 py-5">
+    <div className="border-b border-ink/10 py-5">
       <button
         onClick={() => setOpen((v) => !v)}
         className="flex w-full items-center justify-between gap-4 text-left"
         aria-expanded={open}
       >
-        <span className="font-display text-base font-semibold text-bamboo-950 sm:text-lg">{q}</span>
+        <span className="font-display text-base font-semibold text-ink sm:text-lg">{q}</span>
         <motion.span
           animate={{ rotate: open ? 45 : 0 }}
           transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-          className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-bamboo-100 text-bamboo-700"
+          className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-ink/15 text-bamboo-700"
         >
           +
         </motion.span>
@@ -30,7 +30,7 @@ function FaqItem({ q, a, defaultOpen = false }: { q: string; a: string; defaultO
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
             className="overflow-hidden"
           >
-            <p className="pt-3 pr-10 text-sm text-bamboo-900/60 sm:text-base">{a}</p>
+            <p className="pt-3 pr-10 text-sm text-ink-muted sm:text-base">{a}</p>
           </motion.div>
         )}
       </AnimatePresence>
@@ -45,7 +45,7 @@ export function Faq() {
         initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="text-center text-xs font-semibold uppercase tracking-widest text-bamboo-600"
+        className="font-mono-tnum text-xs tracking-widest text-bronze-500"
       >
         FAQ
       </motion.p>
@@ -54,7 +54,7 @@ export function Faq() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay: 0.1 }}
-        className="mt-2 text-balance text-center font-display text-3xl font-bold text-bamboo-950 sm:text-4xl"
+        className="mt-3 text-balance font-display text-4xl font-semibold text-ink sm:text-5xl"
       >
         Questions fréquentes.
       </motion.h2>

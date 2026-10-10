@@ -8,15 +8,15 @@ export function MarqueeStrip({
   reverse?: boolean
 }) {
   const loop = [...items, ...items]
-  const bg = tone === "dark" ? "bg-bamboo-950 text-paper-100" : "bg-bamboo-500 text-white"
+  const bg = tone === "dark" ? "bg-bamboo-950 text-stone-50" : "bg-stone-100 text-ink"
 
   return (
-    <div className={`overflow-hidden py-3 ${bg}`}>
-      <div className={`flex w-max gap-8 whitespace-nowrap ${reverse ? "animate-marquee-reverse" : "animate-marquee"}`}>
+    <div className={`overflow-hidden border-y border-bronze-500/20 py-3 ${bg}`}>
+      <div className={`flex w-max gap-10 whitespace-nowrap ${reverse ? "animate-marquee-reverse" : "animate-marquee"}`}>
         {loop.map((item, i) => (
-          <span key={`${item}-${i}`} className="flex items-center gap-8 text-sm font-semibold uppercase tracking-wide">
+          <span key={`${item}-${i}`} className="flex items-center gap-10 font-mono-tnum text-xs tracking-widest">
             {item}
-            <span className="text-base opacity-50">✦</span>
+            <span className="h-1 w-1 rounded-full bg-bronze-400/60" />
           </span>
         ))}
       </div>

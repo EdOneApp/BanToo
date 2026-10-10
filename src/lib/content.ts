@@ -46,29 +46,6 @@ export const PAYMENT_METHODS = [
   { name: "Espèces", color: "#2F7D2D", dark: false },
 ]
 
-export const STEPS = [
-  {
-    n: "01",
-    title: "Réservez.",
-    body: "Choisissez un créneau de collecte près de chez vous. Lavage, repassage ou nettoyage à sec, à la pièce ou au sac.",
-  },
-  {
-    n: "02",
-    title: "Payez.",
-    body: "Wave, Orange Money, MTN MoMo, Moov Money ou espèces à la collecte. Le prix est affiché avant de valider.",
-  },
-  {
-    n: "03",
-    title: "Suivez.",
-    body: "Votre coursier BanToo apparaît sur la carte à la collecte, puis votre linge au pressing partenaire. Fini l'attente sans nouvelles.",
-  },
-  {
-    n: "04",
-    title: "Récupérez.",
-    body: "Linge propre, plié ou sur cintre, livré à votre porte en 24h. Notez la livraison, laissez un pourboire si le cœur vous en dit.",
-  },
-]
-
 export const STATS = [
   { value: 24, suffix: "h", label: "Délai moyen de collecte à livraison" },
   { value: 3, suffix: "", label: "Clics pour réserver une collecte" },
@@ -76,34 +53,8 @@ export const STATS = [
   { value: 7, suffix: "j/7", label: "Support sur WhatsApp" },
 ]
 
-export const WHY_BANTOO = [
-  {
-    title: "Rapide. Vraiment.",
-    body: "C'est le délai moyen visé entre la collecte de votre linge et sa livraison, propre et plié.",
-    kind: "stat" as const,
-    value: 24,
-    unit: "heures",
-  },
-  {
-    title: "Suivi en temps réel",
-    body: "Suivez votre coursier rue par rue, de la collecte chez vous jusqu'au retour du linge propre.",
-    kind: "feature" as const,
-  },
-  {
-    title: "Payez comme vous voulez",
-    body: "Mobile Money en un geste, ou espèces à la collecte. Toujours sans surprise sur le prix.",
-    kind: "payments" as const,
-  },
-  {
-    title: "Soin garanti",
-    body: "Pressings partenaires vérifiés, sacs scellés et étiquetés, produits doux pour vos tissus.",
-    kind: "feature" as const,
-  },
-]
-
 export const APPS = [
   {
-    n: "01",
     key: "client",
     label: "Je réserve",
     name: "BanToo",
@@ -115,7 +66,6 @@ export const APPS = [
     ],
   },
   {
-    n: "02",
     key: "coursier",
     label: "Je collecte & livre",
     name: "BanToo Coursier",
@@ -127,7 +77,6 @@ export const APPS = [
     ],
   },
   {
-    n: "03",
     key: "pressing",
     label: "Je lave",
     name: "BanToo Partenaire",
